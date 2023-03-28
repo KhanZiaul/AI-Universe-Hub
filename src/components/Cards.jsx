@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Cards = (props) => {
-   const {name,image,features,published_in} = props.singleData; 
+   const {id,name,image,features,published_in} = props.singleData; 
+
+   function showModal(id){
+    console.log('click',id)
+   }
     return (
         <>
         <div className='w-96 border-2 p-4 rounded-xl'>
@@ -33,8 +37,8 @@ const Cards = (props) => {
                             <p>{published_in}</p>
                         </div>
                     </div>
-                    <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <div className='cursor-pointer'>
+                    <svg onClick={() => showModal(id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                     </svg>
 
