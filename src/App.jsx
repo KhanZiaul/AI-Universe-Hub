@@ -1,11 +1,12 @@
-
+import Button from "./components/Button/Button"
+import Header from "./components/Header"
 
 function App() {
 
   return (
-    <div >
-      <h2 className="text-3xl">welcome</h2>
-      <button className="btn btn-warning">Warning</button>
+    <div className="text-center">
+      <Header></Header>
+      <Button>Sort By Date</Button>
     </div>
   )
 }
