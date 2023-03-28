@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Cards = (props) => {
-   const {image,features} = props.singleData; 
+   const {name,image,features} = props.singleData; 
    console.log(props.singleData)
     return (
         <>
@@ -19,6 +19,9 @@ const Cards = (props) => {
                     })
                 }
 
+                <hr className='border-1 border-gray-500 my-4'/>
+
+                <h2 className='font-bold text-2xl'>{name}</h2>
             </div>
         </div>
         </>
