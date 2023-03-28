@@ -11,7 +11,7 @@ const FetchData = () => {
         .then(allData => setDatas(allData.data.tools))
     },[])
     return (
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-3 p-5 gap-6'>
         {
             datas.map(singleData => <Cards key={singleData.id} singleData={singleData}></Cards>)
         } 
