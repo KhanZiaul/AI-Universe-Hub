@@ -10,7 +10,7 @@ const FetchData = () => {
     const [modal,setModal] = useState([])
     const [modaldata,setModalData] =useState({})
     
-    console.log(modaldata)
+    console.log(datas)
 
     useEffect(() => {
         fetch('https://openapi.programming-hero.com/api/ai/tools')
@@ -32,8 +32,21 @@ const FetchData = () => {
       setModal(id)
     }
 
+    const sortByDate = () => {
+
+        const sortData = datas.sort((a,b) => {
+            return new Date(a.published_in) - new Date(b.published_in)
+        });
+
+        setDatas([...datas,sortData]) ;
+    }
+
     return (
         <>
+        <p className='inline-block' onClick={sortByDate}>
+        <Button>Sort By Date</Button>
+        </p>
+
         <div className='grid grid-cols-1 md:grid-cols-3 p-5 gap-6'>
         {
             datas.slice(0, sortData ? 6 : 12).map(singleData => <Cards key={singleData.id} singleData={singleData} handlerId = {handlerId}></Cards>)

@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="text-center">
       <Header></Header>
-      <Button>Sort By Date</Button>
       <FetchData></FetchData>
     </div>
   )
