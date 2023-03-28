@@ -1,20 +1,26 @@
 import React from 'react';
 
 const Cards = (props) => {
-   const {image} = props.singleData; 
+   const {image,features} = props.singleData; 
    console.log(props.singleData)
     return (
         <>
-    <div className="card w-96 bg-base-100 shadow-xl">
-       <figure><img src={image} alt="" /></figure>
-    <div className="card-body">
-        <h2 className="card-title">Features</h2>
-        
-    <div className="card-actions justify-end">
-        <button className="btn btn-primary">Buy Now</button>
-       </div>
-      </div>
-    </div>
+        <div className='w-96'>
+            <img className='w-full' src={image} alt="" />
+            <div className='text-left'>
+                <h2 className='font-bold text-2xl my-4'>Features</h2>
+                {
+                    features.map((feature , index) => {
+                        return (
+                            <p>
+                            {index+ 1} . {feature}
+                            </p>
+                        )
+                    })
+                }
+
+            </div>
+        </div>
         </>
     );
 };
