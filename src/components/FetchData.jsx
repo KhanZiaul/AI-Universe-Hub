@@ -5,7 +5,7 @@ import Cards from './Cards';
 const FetchData = () => {
 
     const [datas,setDatas] = useState([]);
-    const [sortData,setallData] = useState(true)
+    const [sortData,setAllData] = useState(true)
     useEffect(() => {
         fetch('https://openapi.programming-hero.com/api/ai/tools')
         .then(res => res.json())
@@ -13,8 +13,8 @@ const FetchData = () => {
     },[])
 
     function seeMoreHandler(){
-        console.log('clicked')
-      }
+        setAllData(false);
+    }
 
     return (
         <>
@@ -23,9 +23,12 @@ const FetchData = () => {
             datas.slice(0, sortData ? 6 : 12).map(singleData => <Cards key={singleData.id} singleData={singleData}></Cards>)
         } 
         </div>
-        <p onClick={seeMoreHandler}>
-      <Button>See More</Button>
+        {
+        sortData &&
+        <p className='inline-block' onClick={seeMoreHandler}>
+        <Button>See More</Button>
       </p>
+        }
     </>
     );
 };
