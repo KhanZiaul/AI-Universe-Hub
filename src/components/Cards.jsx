@@ -2,7 +2,6 @@ import React from 'react';
 
 const Cards = (props) => {
    const {name,image,features,published_in} = props.singleData; 
-   console.log(props.singleData)
     return (
         <>
         <div className='w-96 border-2 p-4 rounded-xl'>
