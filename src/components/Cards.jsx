@@ -1,11 +1,12 @@
 import React from 'react';
+import Modal from './Button/Modal';
 
 const Cards = (props) => {
    const {id,name,image,features,published_in} = props.singleData; 
 
-   function showModal(id){
-    console.log('click',id)
-   }
+//    function showModal(id){
+//     <Modal idIs={id}></Modal>
+//    }
     return (
         <>
         <div className='w-96 border-2 p-4 rounded-xl'>
@@ -37,13 +38,14 @@ const Cards = (props) => {
                             <p>{published_in}</p>
                         </div>
                     </div>
-                    <div className='cursor-pointer'>
-                    <svg onClick={() => showModal(id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <label htmlFor="my-modal" className='cursor-pointer'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                     </svg>
 
-                    </div>
+                    </label>
                 </div>
+                <Modal></Modal>
             </div>
         </div>
         </>
