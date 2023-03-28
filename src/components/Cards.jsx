@@ -15,7 +15,7 @@ const Cards = (props) => {
                 {
                     features.map((feature , index) => {
                         return (
-                            <p>
+                            <p key={index}>
                             {index+ 1} . {feature}
                             </p>
                         )

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Modal = (props) => {
     console.log(props.modalDataIs)
-    const {id} = props.modalDataIs
+    const {id} = props.modalDataIs ;
     return (
     <>
     <input type="checkbox" id="my-modal" className="modal-toggle" />
