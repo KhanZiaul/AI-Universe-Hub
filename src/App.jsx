@@ -1,4 +1,3 @@
-import Button from "./components/Button/Button"
 import FetchData from "./components/FetchData"
 import Header from "./components/Header"
 
